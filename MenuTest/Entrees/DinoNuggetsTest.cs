@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Xunit;
 using DinoDiner.Menu.Entrees;
+using System;
 
 namespace MenuTest.Entrees
 {
@@ -45,6 +46,7 @@ namespace MenuTest.Entrees
             int nuggetCount = 0;
             foreach (string ingredient in dn.Ingredients)
             {
+                Console.WriteLine(ingredient);
                 if (ingredient.Equals("Chicken Nugget")) nuggetCount++;
             }
             Assert.Equal<int>(7, nuggetCount);
