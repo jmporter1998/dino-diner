@@ -2,12 +2,19 @@
 using System.Collections.Generic;
 using System.Text;
 
+
 namespace DinoDiner.Menu.Sides
 {
+    /// <summary>
+    /// The Triceritots class
+    /// </summary>
     public class Triceritots : Side
     {
         private Size size;
 
+        /// <summary>
+        /// Sets the size for the Triceritots 
+        /// </summary>
         public override Size Size
         {
             set
@@ -33,7 +40,9 @@ namespace DinoDiner.Menu.Sides
         }
             
         
-
+        /// <summary>
+        /// The constructor for the triceritot class
+        /// </summary>
         public Triceritots()
         {
             Price = 0.99;
