@@ -4,25 +4,27 @@ using System.Text;
 
 namespace DinoDiner.Menu.Entrees
 {
-    public class DinoNuggets
+    /// <summary>
+    /// The dino nugget class
+    /// </summary>
+    public class DinoNuggets : Entree
     {
-        public double Price { get; set; }
-        public uint Calories { get; set; }
-
-        
-        public List<string> Ingredients { get; set; }
-
+        /// <summary>
+        /// The constructor for dino nuggets
+        /// </summary>
         public DinoNuggets()
         {
-            this.Price = 4.25;
-            this.Calories = 354;
-            this.Ingredients = new List<string>();
+            Price = 4.25;
+            Calories = 354;
             for (int i = 0; i < 6; i++)
             {
                 Ingredients.Add("Chicken Nugget");
             }
         }
 
+        /// <summary>
+        /// Adds a chicken nugget to the entree
+        /// </summary>
         public void AddNugget()
         {
             Ingredients.Add("Chicken Nugget");

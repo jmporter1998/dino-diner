@@ -4,53 +4,79 @@ using System.Text;
 
 namespace DinoDiner.Menu.Entrees
 {
-    public class SteakosaurusBurger
+    /// <summary>
+    /// The steakosaurus burger class
+    /// </summary>
+    public class SteakosaurusBurger :Entree
     {
+        /// <summary>
+        /// The bool represetning if the burger has a bun
+        /// </summary>
         private bool bun = true;
+
+        /// <summary>
+        /// The bool represetning if the burger has pickles
+        /// </summary>
         private bool pickle = true;
+
+        /// <summary>
+        /// The bool represetning if the burger has ketchup
+        /// </summary>
         private bool ketchup = true;
+
+        /// <summary>
+        /// The bool represetning if the burger has mustard
+        /// </summary>
         private bool mustard = true;
 
-        public double Price { get; set; }
-        public uint Calories { get; set; }
-
-        public List<string> Ingredients
-        {
-            get
-            {
-                List<string> ingredients = new List<string>() { "Steakburger Pattie" };
-                if (bun) ingredients.Add("Whole Wheat Bun");
-                if (pickle) ingredients.Add("Pickle");
-                if (ketchup) ingredients.Add("Ketchup");
-                if (mustard) ingredients.Add("Mustard");
-                return ingredients;
-            }
-        }
-
+        /// <summary>
+        /// The steakosaurus burger constructor
+        /// </summary>
         public SteakosaurusBurger()
         {
-            this.Price = 5.15;
-            this.Calories = 621;
+            Price = 5.15;
+            Calories = 621;
+            ingredients.Add("Steakburger Pattie");
+            if (bun) ingredients.Add("Whole Wheat Bun");
+            if (pickle) ingredients.Add("Pickle");
+            if (ketchup) ingredients.Add("Ketchup");
+            if (mustard) ingredients.Add("Mustard");
         }
 
+        /// <summary>
+        /// Holds the bun
+        /// </summary>
         public void HoldBun()
         {
             this.bun = false;
+            ingredients.Remove("Whole Wheat Bun");
         }
 
+        /// <summary>
+        /// Holds the pickle
+        /// </summary>
         public void HoldPickle()
         {
             this.pickle = false;
+            ingredients.Remove("Pickle");
         }
 
+        /// <summary>
+        /// Holds the ketchup
+        /// </summary>
         public void HoldKetchup()
         {
             this.ketchup = false;
+            ingredients.Remove("Ketchup");
         }
 
+        /// <summary>
+        /// Holds the mustard
+        /// </summary>
         public void HoldMustard()
         {
             this.mustard = false;
+            ingredients.Remove("Mustard");
         }
     }
 }
