@@ -2,24 +2,19 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Sides
+namespace DinoDiner.Menu.Drinks
 {
-    
-
-    /// <summary>
-    /// The abstract class for sides
-    /// </summary>
-    public abstract class Side
+    public abstract class Drink
     {
         /// <summary>
-        /// The ingredients list for the side
+        /// protected backing field for Ingredients
         /// </summary>
         protected List<string> ingredients = new List<string>();
-        
+
         /// <summary>
         /// Gets and sets the price
         /// </summary>
-        public double Price { get; set; }
+        public double Price { get; set; } 
 
         /// <summary>
         /// Gets and sets the calories
@@ -31,10 +26,23 @@ namespace DinoDiner.Menu.Sides
         /// </summary>
         public List<string> Ingredients { get { return ingredients; } }
 
+        
         /// <summary>
-        /// Gets or sets the size
+        /// Gets and sets the size
         /// </summary>
         public virtual Size Size { get; set; }
 
+        /// <summary>
+        /// Gets and sets if the drink has ice
+        /// </summary>
+        public bool Ice { get; set; } = true;
+
+        /// <summary>
+        /// Holds the ice from the drink
+        /// </summary>
+        public virtual void HoldIce()
+        {
+            Ice = false;
+        }
     }
 }
