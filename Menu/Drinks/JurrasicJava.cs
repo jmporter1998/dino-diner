@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DinoDiner.Menu.Drinks
 {
-    public class JurrasicJava : Drink
+    public class JurrasicJava : Drink , IMenuItem
     {
         /// <summary>
         /// The private backing field
@@ -73,6 +73,16 @@ namespace DinoDiner.Menu.Drinks
         public void AddIce()
         {
             Ice = true;
+        }
+
+        /// <summary>
+        /// The to string method for the class
+        /// </summary>
+        /// <returns>The string representing the items name</returns>
+        public override string ToString()
+        {
+            if (Decaf) return $"{size} Decaf Jurassic Java";
+            return $"{size} Jurassic Java";
         }
     }
 }

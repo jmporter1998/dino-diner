@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DinoDiner.Menu.Drinks
 {
-    public class Water : Drink
+    public class Water : Drink, IMenuItem
     {
         /// <summary>
         /// The field that shows if the water should have a lemon
@@ -28,6 +28,15 @@ namespace DinoDiner.Menu.Drinks
         {
             Lemon = true;
             Ingredients.Add("Lemon");
+        }
+
+        /// <summary>
+        /// The to string method for the class
+        /// </summary>
+        /// <returns>The string representing the items name</returns>
+        public override string ToString()
+        {
+            return $"{Size} Water";            
         }
     }
 }

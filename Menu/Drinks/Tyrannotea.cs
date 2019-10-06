@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DinoDiner.Menu.Drinks
 {
-    public class Tyrannotea : Drink
+    public class Tyrannotea : Drink, IMenuItem
     {
         /// <summary>
         /// The private backing field
@@ -112,6 +112,21 @@ namespace DinoDiner.Menu.Drinks
             Ingredients.Add("Lemon");
         }
 
-        
+        /// <summary>
+        /// The to string method for the class
+        /// </summary>
+        /// <returns>The string representing the items name</returns>
+        public override string ToString()
+        {
+            if (Sweet)
+            {
+                return $"{size} Sweet Tyrannotea";
+            }
+            else
+            {
+                return $"{size} Tyrannotea";
+            }
+            
+        }
     }
 }

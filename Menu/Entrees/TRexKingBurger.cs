@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DinoDiner.Menu.Entrees
 {
-    public class TRexKingBurger : Entree
+    public class TRexKingBurger : Entree, IMenuItem
     {
         /// <summary>
         /// The bool represetning if the burger has a bun
@@ -136,6 +136,15 @@ namespace DinoDiner.Menu.Entrees
         {
             this.mayo = false;
             ingredients.Remove("Mayo");
+        }
+
+        /// <summary>
+        /// The to string method for the class
+        /// </summary>
+        /// <returns>The string representing the items name</returns>
+        public override string ToString()
+        {
+            return "T-Rex King Burger";
         }
     }
 }

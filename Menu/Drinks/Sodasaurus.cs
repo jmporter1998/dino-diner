@@ -5,7 +5,7 @@ using DinoDiner.Menu;
 
 namespace DinoDiner.Menu.Drinks
 {
-    public class Sodasaurus : Drink
+    public class Sodasaurus : Drink, IMenuItem
     {
         /// <summary>
         /// The private backing field
@@ -61,6 +61,15 @@ namespace DinoDiner.Menu.Drinks
             Ingredients.Add("Water");
             Ingredients.Add("Natural Flavors");
             Ingredients.Add("Cane Sugar");
+        }
+
+        /// <summary>
+        /// The to string method for the class
+        /// </summary>
+        /// <returns>The string representing the items name</returns>
+        public override string ToString()
+        {
+            return $"{size} {Flavor} Sodasaurus";
         }
     }
 }

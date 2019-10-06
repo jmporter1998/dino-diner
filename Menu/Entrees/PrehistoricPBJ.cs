@@ -5,7 +5,7 @@ namespace DinoDiner.Menu.Entrees
     /// <summary>
     /// The prehistoric pbj class
     /// </summary>
-    public class PrehistoricPBJ : Entree
+    public class PrehistoricPBJ : Entree, IMenuItem
     {
         /// <summary>
         /// The bool for if the sandwich contains pennut butter
@@ -45,6 +45,15 @@ namespace DinoDiner.Menu.Entrees
         {
             this.jelly = false;
             ingredients.Remove("Jelly");
+        }
+
+        /// <summary>
+        /// The to string method for the class
+        /// </summary>
+        /// <returns>The string representing the items name</returns>
+        public override string ToString()
+        {
+            return "Prehistoric PB&J";
         }
     }
 }

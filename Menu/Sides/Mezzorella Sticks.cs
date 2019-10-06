@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DinoDiner.Menu.Sides
 {
-    public class MezzorellaSticks : Side
+    public class MezzorellaSticks : Side, IMenuItem
     {
         private Size size;
 
@@ -46,6 +46,15 @@ namespace DinoDiner.Menu.Sides
             ingredients.Add("Breading");
             ingredients.Add("Cheese Product");
             ingredients.Add("Vegetable Oil");
+        }
+
+        /// <summary>
+        /// The to string method for the class
+        /// </summary>
+        /// <returns>The string representing the items name</returns>
+        public override string ToString()
+        {
+            return $"{Size} Mezzorella Sticks";
         }
     }
 }

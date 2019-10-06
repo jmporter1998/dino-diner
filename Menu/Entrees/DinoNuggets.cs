@@ -7,7 +7,7 @@ namespace DinoDiner.Menu.Entrees
     /// <summary>
     /// The dino nugget class
     /// </summary>
-    public class DinoNuggets : Entree
+    public class DinoNuggets : Entree, IMenuItem
     {
         /// <summary>
         /// The constructor for dino nuggets
@@ -31,6 +31,15 @@ namespace DinoDiner.Menu.Entrees
             this.Price += 0.25;
             this.Calories += 59;
             
+        }
+
+        /// <summary>
+        /// The to string method for the class
+        /// </summary>
+        /// <returns>The string representing the items name</returns>
+        public override string ToString()
+        {
+            return "Dino-Nuggets";
         }
     }
 }

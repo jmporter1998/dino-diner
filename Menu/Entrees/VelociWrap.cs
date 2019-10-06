@@ -7,7 +7,7 @@ namespace DinoDiner.Menu.Entrees
     /// <summary>
     /// The velociwrap class
     /// </summary>
-    public class VelociWrap : Entree
+    public class VelociWrap : Entree, IMenuItem
     {
         /// <summary>
         /// The bool represetning if it has dressing
@@ -63,6 +63,15 @@ namespace DinoDiner.Menu.Entrees
         {
             this.cheese = false;
             ingredients.Remove("Parmesan Cheese");
+        }
+
+        /// <summary>
+        /// The to string method for the class
+        /// </summary>
+        /// <returns>The string representing the items name</returns>
+        public override string ToString()
+        {
+            return "Veloci-Wrap";
         }
     }
 }

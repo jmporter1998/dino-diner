@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Text;
 using Xunit;
 using DinoDiner.Menu;
+using DinoDiner.Menu.Drinks;
+using DinoDiner.Menu.Sides;
+using DinoDiner.Menu.Entrees;
 
 namespace MenuTest
 {
@@ -123,7 +126,7 @@ namespace MenuTest
         [InlineData(Size.Large, true)]
         public void JurrasicJavaToStringShouldGiveNameForSizeAndDecaf(Size size, bool decaf)
         {
-            JurassicJava java = new JurassicJava();
+            JurrasicJava java = new JurrasicJava();
             java.Size = size;
             java.Decaf = decaf;
             if (decaf) Assert.Equal($"{size} Decaf Jurassic Java", java.ToString());

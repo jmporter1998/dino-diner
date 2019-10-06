@@ -7,7 +7,7 @@ using DinoDiner.Menu.Drinks;
 
 namespace DinoDiner.Menu
 {
-    class CretaceousCombo
+    public class CretaceousCombo : IMenuItem
     {
         public Entree Entree { get; set; }
 
@@ -69,6 +69,11 @@ namespace DinoDiner.Menu
             Entree = entree;
             Side = new Fryceritops();
             Drink = new Sodasaurus();
+        }
+
+        public override string ToString()
+        {
+            return $"{Entree} Combo";
         }
     }
 }

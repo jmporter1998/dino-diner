@@ -7,7 +7,7 @@ namespace DinoDiner.Menu.Entrees
     /// <summary>
     /// The brontowurst class
     /// </summary>
-    public class Brontowurst : Entree
+    public class Brontowurst : Entree, IMenuItem
     {
         /// <summary>
         /// Bool showing if there should be a bun
@@ -62,6 +62,15 @@ namespace DinoDiner.Menu.Entrees
         {
             this.onions = false;
             ingredients.Remove("Onion");
+        }
+
+        /// <summary>
+        /// The to string method for the class
+        /// </summary>
+        /// <returns>The string representing the items name</returns>
+        public override string ToString()
+        {
+            return "Brontowurst";
         }
     }
 }
