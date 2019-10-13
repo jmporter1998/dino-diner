@@ -1,0 +1,76 @@
+﻿<Page x:Class="PointOfSale.EntreeSelection"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PointOfSale"
+      mc:Ignorable="d"
+      Title="EntreeSelection" Height="285.2" Width="596.8">
+
+    <WrapPanel Margin="10,0,10,-0.4">
+        <WrapPanel.Resources>
+            <Style TargetType="Button">
+                <Setter Property="MinWidth" Value="140"/>
+                <Setter Property="MinHeight" Value="140"/>
+
+            </Style>
+        </WrapPanel.Resources>
+        <Button Click="SelectEntree">
+            <StackPanel>
+                <Image Width="100" Source="Assests\DinoDiner-01.png"/>
+                <TextBlock TextAlignment="Center" FontWeight="Bold">Brontowurst</TextBlock>
+            </StackPanel>
+
+        </Button>
+
+        <Button Click="SelectEntree">
+            <StackPanel>
+                <Image Width="100" Source="Assests\DinoDiner-02.png"/>
+                <TextBlock TextAlignment="Center" FontWeight="Bold">Dino-Nuggets Combo</TextBlock>
+            </StackPanel>
+
+        </Button>
+
+        <Button Click="SelectEntree">
+            <StackPanel>
+                <Image Width="100" Source="Assests\DinoDiner-03.png"/>
+                <TextBlock TextAlignment="Center" FontWeight="Bold">Prehistoric PB&amp;J Combo</TextBlock>
+            </StackPanel>
+
+        </Button>
+
+        <Button Click="SelectEntree">
+            <StackPanel>
+                <Image Width="100" Source="Assests\DinoDiner-04.png"/>
+                <TextBlock TextAlignment="Center" FontWeight="Bold">Pterodactyl Wings Combo</TextBlock>
+            </StackPanel>
+
+        </Button>
+
+        <Button Click="SelectEntree">
+            <StackPanel>
+                <Image Width="100" Source="Assests\DinoDiner-05.png"/>
+                <TextBlock TextAlignment="Center" FontWeight="Bold">Steakosaurus Combo</TextBlock>
+            </StackPanel>
+
+        </Button>
+
+        <Button Click="SelectEntree">
+            <StackPanel>
+                <Image Width="100" Source="Assests\DinoDiner-06.png"/>
+                <TextBlock TextAlignment="Center" FontWeight="Bold">T-Rex King Burger Combo</TextBlock>
+            </StackPanel>
+
+        </Button>
+
+        <Button Click="SelectEntree">
+            <StackPanel>
+                <Image Width="100" Source="Assests\DinoDiner-07.png"/>
+                <TextBlock TextAlignment="Center" FontWeight="Bold">Veloci-Wrap Combo</TextBlock>
+            </StackPanel>
+
+        </Button>
+
+
+    </WrapPanel>
+</Page>

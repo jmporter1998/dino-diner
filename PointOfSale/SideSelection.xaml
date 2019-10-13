@@ -1,0 +1,69 @@
+﻿<Page x:Class="PointOfSale.SideSelection"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PointOfSale"
+      mc:Ignorable="d"
+      Title="SideSelection" Height="434.762" Width="507.45">
+
+    <Grid Height="435" VerticalAlignment="Top" HorizontalAlignment="Right" Width="503" Margin="0,0,0.2,-0.6">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+
+        </Grid.ColumnDefinitions>
+
+
+        <Button>
+            <StackPanel>
+                <Image Width="100" Source="Assests\DinoDiner-09.png"/>
+                <TextBlock TextAlignment="Center" FontWeight="Bold">Meteor Mac &amp; Cheese</TextBlock>
+            </StackPanel>
+
+        </Button>
+
+        <Button Grid.Column="0" Grid.Row="1">
+            <StackPanel>
+                <Image Width="100" Source="Assests\DinoDiner-10.png"/>
+                <TextBlock TextAlignment="Center" FontWeight="Bold">Mozzerella Sticks</TextBlock>
+            </StackPanel>
+
+        </Button>
+
+        <Button Grid.Column="1" Margin="0.8,0,0.4,0.6">
+            <StackPanel>
+                <Image Width="100" Source="Assests\DinoDiner-08.png"/>
+                <TextBlock TextAlignment="Center" FontWeight="Bold">Fryceritops</TextBlock>
+            </StackPanel>
+
+        </Button>
+
+        <Button Grid.Column="1" Grid.Row="1" Margin="0.8,0.4,0.4,0.2">
+            <StackPanel>
+                <Image Width="100" Source="Assests\DinoDiner-11.png"/>
+                <TextBlock TextAlignment="Center" FontWeight="Bold">Triceritots</TextBlock>
+            </StackPanel>
+
+        </Button>
+
+
+        <TextBlock 
+            Grid.Column="1" Grid.Row="0"
+            FontSize="20" 
+            FontFamily="TitleStyle" 
+            FontWeight="Bold" 
+            TextAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="1.511,0.197" Grid.ColumnSpan="2" Margin="112,56,0.8,57.6">Select Size:</TextBlock>
+        <RadioButton GroupName="Size" Content="Medium" FontWeight="Bold" TextBlock.FontSize="20" HorizontalAlignment="Center" Grid.Column="2"  Grid.Row="1" VerticalAlignment="Center"/>
+        <RadioButton GroupName="Size" Content="Large" FontWeight="Bold" TextBlock.FontSize="20" HorizontalAlignment="Center" Grid.Column="3"  Grid.Row="1" VerticalAlignment="Center"/>
+        <RadioButton GroupName="Size" Content="Small" FontWeight="Bold" TextBlock.FontSize="20" HorizontalAlignment="Center"  Grid.Column="3" Grid.Row="0" VerticalAlignment="Center"/>
+
+    </Grid>
+</Page>
