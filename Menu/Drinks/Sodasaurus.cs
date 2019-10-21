@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 using DinoDiner.Menu;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu.Drinks
 {
-    public class Sodasaurus : Drink, IMenuItem
+    public class Sodasaurus : Drink, IMenuItem, INotifyPropertyChanged
     {
         /// <summary>
         /// The private backing field
@@ -23,7 +24,11 @@ namespace DinoDiner.Menu.Drinks
         public SodasaurusFlavor Flavor
         {
             get { return flavor; }
-            set { flavor = value; }
+            set
+            {
+                flavor = value;
+                NotifyOfPropertyChanged("Description");
+            }
         }
 
         /// <summary>
@@ -49,7 +54,10 @@ namespace DinoDiner.Menu.Drinks
                     Price = 2.50;
                     Calories = 208;
                 }
+                NotifyOfPropertyChanged("Description");
+                NotifyOfPropertyChanged("Price");
             }
+
         }
 
         /// <summary>
@@ -70,6 +78,38 @@ namespace DinoDiner.Menu.Drinks
         public override string ToString()
         {
             return $"{size} {Flavor} Sodasaurus";
+        }
+
+        /// <summary>
+        /// Gets description of order item
+        /// </summary>
+        public override string Description
+        {
+            get { return this.ToString(); }
+        }
+
+        /// <summary>
+        /// Returns the array of strings containong specials for the item
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (!Ice) special.Add("Hold Ice");
+                return special.ToArray();
+            }
+        }
+
+        /// <summary>
+        /// An event handler for PropertyChanged events for peanut butter, jelly, description, and special
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+
+        protected void NotifyOfPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

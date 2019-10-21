@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DinoDiner.Menu.Drinks
 {
-    public abstract class Drink
+    public abstract class Drink : IOrderItem
     {
         /// <summary>
         /// protected backing field for Ingredients
@@ -44,5 +44,15 @@ namespace DinoDiner.Menu.Drinks
         {
             Ice = false;
         }
+
+        /// <summary>
+        /// gets the special for the drink
+        /// </summary>
+        public abstract string[] Special { get; }
+
+        /// <summary>
+        /// gets the  description for the drink
+        /// </summary>
+        public abstract string Description { get; }
     }
 }

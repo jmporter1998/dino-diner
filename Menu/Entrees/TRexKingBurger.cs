@@ -146,5 +146,33 @@ namespace DinoDiner.Menu.Entrees
         {
             return "T-Rex King Burger";
         }
+
+        /// <summary>
+        /// Gets description of order item
+        /// </summary>
+        public override string Description
+        {
+            get { return this.ToString(); }
+        }
+
+        /// <summary>
+        /// Returns the array of strings containong specials for the item
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (!bun) special.Add("Hold Whole Wheat Bun");
+                if (!pickle) special.Add("Hold Pickes");
+                if (!ketchup) special.Add("Hold Ketchup");
+                if (!mustard) special.Add("Hold Mustard");
+                if (!lettuce) special.Add("Hold Lettuce");
+                if (!tomato) special.Add("Hold Tomato");
+                if (!onion) special.Add("Hold Onion");
+                if (!mayo) special.Add("Hold Mayonnaise");
+                return special.ToArray();
+            }
+        }
     }
 }

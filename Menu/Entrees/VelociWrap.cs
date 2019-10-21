@@ -73,5 +73,28 @@ namespace DinoDiner.Menu.Entrees
         {
             return "Veloci-Wrap";
         }
+
+        /// <summary>
+        /// Gets description of order item
+        /// </summary>
+        public override string Description
+        {
+            get { return this.ToString(); }
+        }
+
+        /// <summary>
+        /// Returns the array of strings containong specials for the item
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (!dressing) special.Add("Hold Dressing");
+                if (!lettuce) special.Add("Hold Lettuce");
+                if (!cheese) special.Add("Hold Cheese");
+                return special.ToArray();
+            }
+        }
     }
 }

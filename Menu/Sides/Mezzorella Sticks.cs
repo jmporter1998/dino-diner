@@ -56,5 +56,25 @@ namespace DinoDiner.Menu.Sides
         {
             return $"{Size} Mezzorella Sticks";
         }
+
+        /// <summary>
+        /// Gets description of order item
+        /// </summary>
+        public override string Description
+        {
+            get { return this.ToString(); }
+        }
+
+        /// <summary>
+        /// Returns the array of strings containong specials for the item
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                return special.ToArray();
+            }
+        }
     }
 }

@@ -57,7 +57,27 @@ namespace DinoDiner.Menu.Sides
         /// <returns>The string representing the items name</returns>
         public override string ToString()
         {
-            return $"{Size} Friceritops";
+            return $"{Size} Fryceritops";
+        }
+
+        /// <summary>
+        /// Gets description of order item
+        /// </summary>
+        public override string Description
+        {
+            get { return this.ToString(); }
+        }
+
+        /// <summary>
+        /// Returns the array of strings containong specials for the item
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                return special.ToArray();
+            }
         }
     }
 }

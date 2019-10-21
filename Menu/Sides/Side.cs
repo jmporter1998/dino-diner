@@ -9,7 +9,7 @@ namespace DinoDiner.Menu.Sides
     /// <summary>
     /// The abstract class for sides
     /// </summary>
-    public abstract class Side
+    public abstract class Side : IOrderItem
     {
         /// <summary>
         /// The ingredients list for the side
@@ -35,6 +35,16 @@ namespace DinoDiner.Menu.Sides
         /// Gets or sets the size
         /// </summary>
         public virtual Size Size { get; set; }
+
+        /// <summary>
+        /// gets the special for the side
+        /// </summary>
+        public abstract string[] Special { get; }
+
+        /// <summary>
+        /// gets the  description for the side
+        /// </summary>
+        public abstract string Description { get; }
 
     }
 }

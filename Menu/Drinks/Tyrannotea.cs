@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu.Drinks
 {
-    public class Tyrannotea : Drink, IMenuItem
+    public class Tyrannotea : Drink, IMenuItem, INotifyPropertyChanged
     {
         /// <summary>
         /// The private backing field
@@ -22,23 +23,27 @@ namespace DinoDiner.Menu.Drinks
         public bool Sweet
         {
             get { return sweet; }
-            set {
-                if(!Sweet && value == true)
+            set
+            {
+                if (!Sweet && value == true)
                 {
                     Calories = Calories * 2;
                     Ingredients.Add("Cane Sugar");
                     sweet = value;
                 }
-                else if(Sweet && value == false)
+                else if (Sweet && value == false)
                 {
                     Calories = Calories / 2;
                     Ingredients.Remove("Cane Sugar");
                     sweet = value;
                 }
+                NotifyOfPropertyChanged("Description");
             }
         }
-    
-        
+            
+
+
+
 
         /// <summary>
         /// The property that shows if the Tyrannotea has lemon
@@ -90,7 +95,10 @@ namespace DinoDiner.Menu.Drinks
                         Calories = 32;
                     }
                 }
+                NotifyOfPropertyChanged("Description");
+                NotifyOfPropertyChanged("Price");
             }
+
         }
 
         /// <summary>
@@ -110,6 +118,7 @@ namespace DinoDiner.Menu.Drinks
         {
             Lemon = true;
             Ingredients.Add("Lemon");
+            NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>
@@ -127,6 +136,39 @@ namespace DinoDiner.Menu.Drinks
                 return $"{size} Tyrannotea";
             }
             
+        }
+
+        /// <summary>
+        /// Gets description of order item
+        /// </summary>
+        public override string Description
+        {
+            get { return this.ToString(); }
+        }
+
+        /// <summary>
+        /// Returns the array of strings containong specials for the item
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (!Ice) special.Add("Hold Ice");
+                if (Lemon) special.Add("Add Lemon");
+                return special.ToArray();
+            }
+        }
+
+        /// <summary>
+        /// An event handler for PropertyChanged events for peanut butter, jelly, description, and special
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+
+        protected void NotifyOfPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
