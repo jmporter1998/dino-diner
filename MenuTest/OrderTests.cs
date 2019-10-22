@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu
+namespace MenuTest
 {
-    public class Menu
+    class OrderTests
     {
 
-             
     }
 }

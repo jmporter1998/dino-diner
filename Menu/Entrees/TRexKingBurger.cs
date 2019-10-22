@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
-namespace DinoDiner.Menu.Entrees
+namespace DinoDiner.Menu
 {
     public class TRexKingBurger : Entree, IMenuItem
     {
@@ -73,6 +74,7 @@ namespace DinoDiner.Menu.Entrees
         {
             this.bun = false;
             ingredients.Remove("Whole Wheat Bun");
+            NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>
@@ -82,6 +84,7 @@ namespace DinoDiner.Menu.Entrees
         {
             this.pickle = false;
             ingredients.Remove("Pickle");
+            NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>
@@ -91,6 +94,7 @@ namespace DinoDiner.Menu.Entrees
         {
             this.ketchup = false;
             ingredients.Remove("Ketchup");
+            NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>
@@ -100,6 +104,7 @@ namespace DinoDiner.Menu.Entrees
         {
             this.mustard = false;
             ingredients.Remove("Mustard");
+            NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>
@@ -109,6 +114,7 @@ namespace DinoDiner.Menu.Entrees
         {
             this.lettuce = false;
             ingredients.Remove("Lettuce");
+            NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>
@@ -118,6 +124,7 @@ namespace DinoDiner.Menu.Entrees
         {
             this.tomato = false;
             ingredients.Remove("Tomato");
+            NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>
@@ -127,6 +134,7 @@ namespace DinoDiner.Menu.Entrees
         {
             this.onion = false;
             ingredients.Remove("Onion");
+            NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>
@@ -136,6 +144,7 @@ namespace DinoDiner.Menu.Entrees
         {
             this.mayo = false;
             ingredients.Remove("Mayo");
+            NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>
@@ -173,6 +182,17 @@ namespace DinoDiner.Menu.Entrees
                 if (!mayo) special.Add("Hold Mayonnaise");
                 return special.ToArray();
             }
+        }
+
+        /// <summary>
+        /// An event handler for PropertyChanged events for peanut butter, jelly, description, and special
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+
+        protected void NotifyOfPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

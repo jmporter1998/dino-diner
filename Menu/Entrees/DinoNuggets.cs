@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.ComponentModel;
 
-namespace DinoDiner.Menu.Entrees
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// The dino nugget class
@@ -35,6 +35,7 @@ namespace DinoDiner.Menu.Entrees
             this.Price += 0.25;
             this.Calories += 59;
             NotifyOfPropertyChanged("Special");
+            NotifyOfPropertyChanged("Ingredients");
 
         }
 

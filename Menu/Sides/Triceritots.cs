@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 
-namespace DinoDiner.Menu.Sides
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// The Triceritots class
@@ -35,6 +36,8 @@ namespace DinoDiner.Menu.Sides
                         Calories = 590;
                         break;
                 }
+                NotifyOfPropertyChanged("Description");
+                NotifyOfPropertyChanged("Special");
             }
             get { return size; }
         }
@@ -80,6 +83,17 @@ namespace DinoDiner.Menu.Sides
                 List<string> special = new List<string>();
                 return special.ToArray();
             }
+        }
+
+        /// <summary>
+        /// An event handler for PropertyChanged events for peanut butter, jelly, description, and special
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+
+        protected void NotifyOfPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

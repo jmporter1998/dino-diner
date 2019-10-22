@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
-namespace DinoDiner.Menu.Entrees
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// The steakosaurus burger class
@@ -50,6 +51,7 @@ namespace DinoDiner.Menu.Entrees
         {
             this.bun = false;
             ingredients.Remove("Whole Wheat Bun");
+            NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>
@@ -59,6 +61,7 @@ namespace DinoDiner.Menu.Entrees
         {
             this.pickle = false;
             ingredients.Remove("Pickle");
+            NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>
@@ -68,6 +71,7 @@ namespace DinoDiner.Menu.Entrees
         {
             this.ketchup = false;
             ingredients.Remove("Ketchup");
+            NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>
@@ -77,6 +81,7 @@ namespace DinoDiner.Menu.Entrees
         {
             this.mustard = false;
             ingredients.Remove("Mustard");
+            NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>
@@ -110,6 +115,17 @@ namespace DinoDiner.Menu.Entrees
                 if (!mustard) special.Add("Hold Mustard");
                 return special.ToArray();
             }
+        }
+
+        /// <summary>
+        /// An event handler for PropertyChanged events for peanut butter, jelly, description, and special
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+
+        protected void NotifyOfPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

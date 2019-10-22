@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
-namespace DinoDiner.Menu.Entrees
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// The velociwrap class
@@ -45,6 +46,7 @@ namespace DinoDiner.Menu.Entrees
         {
             this.dressing = false;
             ingredients.Remove("Dressing");
+            NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>
@@ -54,6 +56,7 @@ namespace DinoDiner.Menu.Entrees
         {
             this.lettuce = false;
             ingredients.Remove("Lettuce");
+            NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>
@@ -63,6 +66,7 @@ namespace DinoDiner.Menu.Entrees
         {
             this.cheese = false;
             ingredients.Remove("Parmesan Cheese");
+            NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>
@@ -95,6 +99,17 @@ namespace DinoDiner.Menu.Entrees
                 if (!cheese) special.Add("Hold Cheese");
                 return special.ToArray();
             }
+        }
+
+        /// <summary>
+        /// An event handler for PropertyChanged events for peanut butter, jelly, description, and special
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+
+        protected void NotifyOfPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

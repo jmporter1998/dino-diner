@@ -7,7 +7,10 @@
         mc:Ignorable="d"
         Title="Dino Diner" Height="450" Width="800">
     <DockPanel>
-        <TextBlock DockPanel.Dock="Right" Width="200" TextAlignment="Center" Background="LightSteelBlue"> Current Order <LineBreak/> -----------------------------------------</TextBlock>
+        <local:OrderList DockPanel.Dock="Right" 
+                         Width="200" 
+                         Background="LightSteelBlue">
+        </local:OrderList>
         <Frame Source="MenuCategorySelection.xaml"></Frame>
     </DockPanel>
 </Window>

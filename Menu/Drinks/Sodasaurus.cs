@@ -4,7 +4,7 @@ using System.Text;
 using DinoDiner.Menu;
 using System.ComponentModel;
 
-namespace DinoDiner.Menu.Drinks
+namespace DinoDiner.Menu
 {
     public class Sodasaurus : Drink, IMenuItem, INotifyPropertyChanged
     {
