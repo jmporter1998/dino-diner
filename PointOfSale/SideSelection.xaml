@@ -5,9 +5,9 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:PointOfSale"
       mc:Ignorable="d"
-      Title="SideSelection" Height="434.762" Width="507.45">
+      Title="SideSelection" Height="377.821" Width="507.45">
 
-    <Grid Height="435" VerticalAlignment="Top" HorizontalAlignment="Right" Width="503" Margin="0,0,0.2,-0.6">
+    <Grid HorizontalAlignment="Right" Width="503" Margin="0,0,0.2,-0.4">
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
@@ -22,7 +22,7 @@
         </Grid.ColumnDefinitions>
 
 
-        <Button>
+        <Button Click="OnSelectMeteorMacAndCheese">
             <StackPanel>
                 <Image Width="100" Source="Assests\DinoDiner-09.png"/>
                 <TextBlock TextAlignment="Center" FontWeight="Bold">Meteor Mac &amp; Cheese</TextBlock>
@@ -30,7 +30,7 @@
 
         </Button>
 
-        <Button Grid.Column="0" Grid.Row="1">
+        <Button Grid.Column="0" Grid.Row="1" Click="OnSelectMezzorellaSticks">
             <StackPanel>
                 <Image Width="100" Source="Assests\DinoDiner-10.png"/>
                 <TextBlock TextAlignment="Center" FontWeight="Bold">Mozzerella Sticks</TextBlock>
@@ -38,7 +38,7 @@
 
         </Button>
 
-        <Button Grid.Column="1" Margin="0.8,0,0.4,0.6">
+        <Button Grid.Column="1" Margin="0.8,0,0.4,0.6" Click="OnSelectFryceritops">
             <StackPanel>
                 <Image Width="100" Source="Assests\DinoDiner-08.png"/>
                 <TextBlock TextAlignment="Center" FontWeight="Bold">Fryceritops</TextBlock>
@@ -46,7 +46,7 @@
 
         </Button>
 
-        <Button Grid.Column="1" Grid.Row="1" Margin="0.8,0.4,0.4,0.2">
+        <Button Grid.Column="1" Grid.Row="1" Margin="0.8,0.4,0.4,0.2" Click="OnSelectTriceritots">
             <StackPanel>
                 <Image Width="100" Source="Assests\DinoDiner-11.png"/>
                 <TextBlock TextAlignment="Center" FontWeight="Bold">Triceritots</TextBlock>
@@ -61,9 +61,9 @@
             FontFamily="TitleStyle" 
             FontWeight="Bold" 
             TextAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="1.511,0.197" Grid.ColumnSpan="2" Margin="112,56,0.8,57.6">Select Size:</TextBlock>
-        <RadioButton GroupName="Size" Content="Medium" FontWeight="Bold" TextBlock.FontSize="20" HorizontalAlignment="Center" Grid.Column="2"  Grid.Row="1" VerticalAlignment="Center"/>
-        <RadioButton GroupName="Size" Content="Large" FontWeight="Bold" TextBlock.FontSize="20" HorizontalAlignment="Center" Grid.Column="3"  Grid.Row="1" VerticalAlignment="Center"/>
-        <RadioButton GroupName="Size" Content="Small" FontWeight="Bold" TextBlock.FontSize="20" HorizontalAlignment="Center"  Grid.Column="3" Grid.Row="0" VerticalAlignment="Center"/>
+        <RadioButton GroupName="Size" Content="Medium" Tag="Medium" FontWeight="Bold" TextBlock.FontSize="20" HorizontalAlignment="Center" Grid.Column="2"  Grid.Row="1" VerticalAlignment="Center" Click="OnChangeSize"/>
+        <RadioButton GroupName="Size" Content="Large" Tag="Large" FontWeight="Bold" TextBlock.FontSize="20" HorizontalAlignment="Center" Grid.Column="3"  Grid.Row="1" VerticalAlignment="Center" Click="OnChangeSize"/>
+        <RadioButton GroupName="Size" Content="Small" Tag="Small" FontWeight="Bold" TextBlock.FontSize="20" HorizontalAlignment="Center"  Grid.Column="3" Grid.Row="0" VerticalAlignment="Center" Click="OnChangeSize"/>
 
     </Grid>
 </Page>

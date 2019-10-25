@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DinoDiner.Menu;
 
 namespace PointOfSale
 {
@@ -20,6 +21,9 @@ namespace PointOfSale
     /// </summary>
     public partial class ComboSelection : Page
     {
+        Entree entree;
+
+
         public ComboSelection()
         {
             InitializeComponent();
@@ -28,6 +32,111 @@ namespace PointOfSale
         void SelectEntree(object sender, RoutedEventArgs args)
         {
             NavigationService.Navigate(new CustomizeCombo());
+        }
+
+        /// <summary>
+        /// The click event for the brontowurst
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        private void OnSelectBrontowurst(object sender, RoutedEventArgs args)
+        {
+            if (DataContext is Order order)
+            {
+                entree = new Brontowurst();
+                order.Add(entree);
+                NavigationService.Navigate(new CustomizeCombo());
+            }
+        }
+
+        /// <summary>
+        /// The click event for the dino nuggets
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        private void OnSelectDinoNuggets(object sender, RoutedEventArgs args)
+        {
+            if (DataContext is Order order)
+            {
+                entree = new DinoNuggets();
+                order.Add(entree);
+                NavigationService.Navigate(new CustomizeCombo());
+            }
+        }
+
+        /// <summary>
+        /// The click event for the prehistoric pb&j
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        private void OnSelectPrehistoricPBJ(object sender, RoutedEventArgs args)
+        {
+            if (DataContext is Order order)
+            {
+                entree = new PrehistoricPBJ();
+                order.Add(entree);
+                NavigationService.Navigate(new CustomizeCombo());
+            }
+        }
+
+        /// <summary>
+        /// The click event for the Pterodactyl Wings
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        private void OnSelectPterodactylWings(object sender, RoutedEventArgs args)
+        {
+            if (DataContext is Order order)
+            {
+                entree = new PterodactylWings();
+                order.Add(entree);
+                NavigationService.Navigate(new CustomizeCombo());
+            }
+        }
+
+        /// <summary>
+        /// The click event for the Steakosaurus Burger
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        private void OnSelectSteakosaurusBurger(object sender, RoutedEventArgs args)
+        {
+            if (DataContext is Order order)
+            {
+                entree = new SteakosaurusBurger();
+                order.Add(entree);
+                NavigationService.Navigate(new CustomizeCombo());
+            }
+        }
+
+        /// <summary>
+        /// The click event for the T Rex King Burger
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        private void OnSelectTRexKingBurger(object sender, RoutedEventArgs args)
+        {
+            if (DataContext is Order order)
+            {
+                entree = new TRexKingBurger();
+                order.Add(entree);
+                NavigationService.Navigate(new CustomizeCombo());
+            }
+        }
+
+        /// <summary>
+        /// The click event for the VelociWrap
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        private void OnSelectVelociWrap(object sender, RoutedEventArgs args)
+        {
+            if (DataContext is Order order)
+            {
+                entree = new VelociWrap();
+                order.Add(entree);
+                NavigationService.Navigate(new CustomizeCombo());
+            }
         }
     }
 }

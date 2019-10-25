@@ -7,10 +7,17 @@
         mc:Ignorable="d"
         Title="Dino Diner" Height="450" Width="800">
     <DockPanel>
-        <local:OrderList DockPanel.Dock="Right" 
-                         Width="200" 
-                         Background="LightSteelBlue">
+        <local:OrderList 
+            x:Name="OrderList"
+            DockPanel.Dock="Right" 
+            MinWidth="200" 
+            Background="LightSteelBlue">
         </local:OrderList>
-        <Frame Source="MenuCategorySelection.xaml"></Frame>
+        <Frame 
+            x:Name="OrderUI"
+            Source="MenuCategorySelection.xaml"
+            LoadCompleted="OnLoadCompleted"
+            DataContextChanged="OnDataContextChanged"
+               ></Frame>
     </DockPanel>
 </Window>

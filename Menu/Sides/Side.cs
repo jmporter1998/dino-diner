@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
@@ -11,6 +12,19 @@ namespace DinoDiner.Menu
     /// </summary>
     public abstract class Side : IOrderItem
     {
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        /// <summary>
+        /// The property changed event 
+        /// </summary>
+        /// <param name="propertyName"></param>
+        protected void NotifyOfPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+
         /// <summary>
         /// The ingredients list for the side
         /// </summary>

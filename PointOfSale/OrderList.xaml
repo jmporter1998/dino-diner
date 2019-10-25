@@ -28,12 +28,24 @@
                    />
         <ListBox Grid.Row="1" 
                  Grid.ColumnSpan="2"
-                 ItemsSource="{Binding Path=Items}"
+                 ItemsSource="{Binding Path=Items, UpdateSourceTrigger=PropertyChanged}"
+                 Name="OrderItems"
+                 SelectionChanged="OnSelectionChanged"
                  >
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel>
-                        <TextBlock Text="{Binding Path=Description}"/>
+                    <StackPanel Width="190">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="15"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="{Binding Path=Description}"/>
+                            <Button Click="RemoveItem" 
+                                    Grid.Column="1"
+                                    Background="Red"
+                                    Foreground="Black">X</Button>
+                        </Grid>
                         <ListBox ItemsSource="{Binding Path=Special}"
                                  BorderBrush="White"/>
                         

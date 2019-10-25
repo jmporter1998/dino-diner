@@ -15,7 +15,7 @@
 
             </Style>
         </WrapPanel.Resources>
-        <Button Click="SelectEntree">
+        <Button Click="OnSelectBrontowurst">
             <StackPanel>
                 <Image Width="100" Source="Assests\DinoDiner-01.png"/>
                 <TextBlock TextAlignment="Center" FontWeight="Bold">Brontowurst</TextBlock>
@@ -23,50 +23,50 @@
 
         </Button>
 
-        <Button Click="SelectEntree">
+        <Button Click="OnSelectDinoNuggets">
             <StackPanel>
                 <Image Width="100" Source="Assests\DinoDiner-02.png"/>
-                <TextBlock TextAlignment="Center" FontWeight="Bold">Dino-Nuggets Combo</TextBlock>
+                <TextBlock TextAlignment="Center" FontWeight="Bold">Dino-Nuggets</TextBlock>
             </StackPanel>
 
         </Button>
 
-        <Button Click="SelectEntree">
+        <Button Click="OnSelectPrehistoricPBJ">
             <StackPanel>
                 <Image Width="100" Source="Assests\DinoDiner-03.png"/>
-                <TextBlock TextAlignment="Center" FontWeight="Bold">Prehistoric PB&amp;J Combo</TextBlock>
+                <TextBlock TextAlignment="Center" FontWeight="Bold">Prehistoric PB&amp;J</TextBlock>
             </StackPanel>
 
         </Button>
 
-        <Button Click="SelectEntree">
+        <Button Click="OnSelectPterodactylWings">
             <StackPanel>
                 <Image Width="100" Source="Assests\DinoDiner-04.png"/>
-                <TextBlock TextAlignment="Center" FontWeight="Bold">Pterodactyl Wings Combo</TextBlock>
+                <TextBlock TextAlignment="Center" FontWeight="Bold">Pterodactyl Wings</TextBlock>
             </StackPanel>
 
         </Button>
 
-        <Button Click="SelectEntree">
+        <Button Click="OnSelectSteakosaurusBurger">
             <StackPanel>
                 <Image Width="100" Source="Assests\DinoDiner-05.png"/>
-                <TextBlock TextAlignment="Center" FontWeight="Bold">Steakosaurus Combo</TextBlock>
+                <TextBlock TextAlignment="Center" FontWeight="Bold">Steakosaurus Buger</TextBlock>
             </StackPanel>
 
         </Button>
 
-        <Button Click="SelectEntree">
+        <Button Click="OnSelectTRexKingBurger">
             <StackPanel>
                 <Image Width="100" Source="Assests\DinoDiner-06.png"/>
-                <TextBlock TextAlignment="Center" FontWeight="Bold">T-Rex King Burger Combo</TextBlock>
+                <TextBlock TextAlignment="Center" FontWeight="Bold">T-Rex King Burger</TextBlock>
             </StackPanel>
 
         </Button>
 
-        <Button Click="SelectEntree">
+        <Button Click="OnSelectVelociWrap">
             <StackPanel>
                 <Image Width="100" Source="Assests\DinoDiner-07.png"/>
-                <TextBlock TextAlignment="Center" FontWeight="Bold">Veloci-Wrap Combo</TextBlock>
+                <TextBlock TextAlignment="Center" FontWeight="Bold">Veloci-Wrap</TextBlock>
             </StackPanel>
 
         </Button>

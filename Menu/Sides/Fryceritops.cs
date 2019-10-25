@@ -35,8 +35,9 @@ namespace DinoDiner.Menu
                         Calories = 480;
                         break;
                 }
-                NotifyOfPropertyChanged("Description");
                 NotifyOfPropertyChanged("Price");
+                NotifyOfPropertyChanged("Size");
+                NotifyOfPropertyChanged("Description");
             }
             get { return size; }
             
@@ -84,15 +85,6 @@ namespace DinoDiner.Menu
             }
         }
 
-        /// <summary>
-        /// An event handler for PropertyChanged events for peanut butter, jelly, description, and special
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
-
-
-        protected void NotifyOfPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
+        
     }
 }

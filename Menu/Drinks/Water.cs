@@ -8,6 +8,24 @@ namespace DinoDiner.Menu
     public class Water : Drink, IMenuItem, INotifyPropertyChanged
     {
         /// <summary>
+        /// The private backing field
+        /// </summary>
+        private Size size;
+
+        /// <summary>
+        /// The size property for water
+        /// </summary>
+        public override Size Size
+        {
+            get { return size; }
+            set
+            {
+                size = value;
+                NotifyOfPropertyChanged("Description");
+            }
+        }
+
+        /// <summary>
         /// The field that shows if the water should have a lemon
         /// </summary>
         public bool Lemon { get; set; }
@@ -63,15 +81,6 @@ namespace DinoDiner.Menu
             }
         }
 
-        /// <summary>
-        /// An event handler for PropertyChanged events for peanut butter, jelly, description, and special
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
-
-
-        protected void NotifyOfPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
+        
     }
 }

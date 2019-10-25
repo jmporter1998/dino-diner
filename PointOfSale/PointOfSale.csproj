@@ -60,6 +60,9 @@
     <Compile Include="EntreeSelection.xaml.cs">
       <DependentUpon>EntreeSelection.xaml</DependentUpon>
     </Compile>
+    <Compile Include="FlavorSelection.xaml.cs">
+      <DependentUpon>FlavorSelection.xaml</DependentUpon>
+    </Compile>
     <Compile Include="OrderList.xaml.cs">
       <DependentUpon>OrderList.xaml</DependentUpon>
     </Compile>
@@ -79,6 +82,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="EntreeSelection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FlavorSelection.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

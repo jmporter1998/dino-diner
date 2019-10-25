@@ -1,12 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
 
     public abstract class Entree : IOrderItem
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        /// <summary>
+        /// The property changed event 
+        /// </summary>
+        /// <param name="propertyName"></param>
+        protected void NotifyOfPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
         /// <summary>
         /// The ingredients list for the side
         /// </summary>

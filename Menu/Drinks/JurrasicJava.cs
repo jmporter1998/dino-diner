@@ -5,7 +5,7 @@ using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
-    public class JurrasicJava : Drink , IMenuItem, INotifyPropertyChanged
+    public class JurrasicJava : Drink, IMenuItem, INotifyPropertyChanged
     {
 
         /// <summary>
@@ -113,15 +113,6 @@ namespace DinoDiner.Menu
             }
         }
 
-        /// <summary>
-        /// An event handler for PropertyChanged events for peanut butter, jelly, description, and special
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
-
-
-        protected void NotifyOfPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
     }
+        
 }
