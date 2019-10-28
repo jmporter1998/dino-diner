@@ -53,7 +53,7 @@
 
         </Button>
 
-        <Button x:Name="uxFlavor" IsEnabled="False" Grid.Column="2" Grid.Row="0" Margin="1.4,0,0.4,50.8">
+        <Button Click="OnSelectFlavor" x:Name="uxFlavor" IsEnabled="False" Grid.Column="2" Grid.Row="0" Margin="1.4,0,0.4,50.8">
             <StackPanel>
 
                 <TextBlock TextAlignment="Center" FontWeight="Bold">Flavor</TextBlock>
@@ -70,14 +70,14 @@
         <RadioButton Tag="Medium" Click="OnChangeSize" GroupName="Size" Content="Medium" FontWeight="Bold" TextBlock.FontSize="20" HorizontalAlignment="Center" Grid.Column="1"  Grid.Row="2" VerticalAlignment="Center" Margin="43.2,10.4,43.6,65.4"/>
         <RadioButton Tag="Large" Click="OnChangeSize" GroupName="Size" Content="Large" FontWeight="Bold" TextBlock.FontSize="20" HorizontalAlignment="Center" Grid.Column="1"  Grid.Row="3" VerticalAlignment="Center" Margin="57.2,9.6,56.6,66"/>
         <RadioButton Tag="Small" Click="OnChangeSize" GroupName="Size" Content="Small" FontWeight="Bold" TextBlock.FontSize="20" HorizontalAlignment="Center"  Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" Margin="57.2,10.2,56.6,65.6"/>
-        <Button Name="uxAddLemon" IsEnabled="False" Grid.Column="2" Margin="1.4,50,0.4,100.6" Grid.RowSpan="2">
+        <Button Click="OnSelectAddLemon" Name="uxAddLemon" IsEnabled="False" Grid.Column="2" Margin="1.4,50,0.4,100.6" Grid.RowSpan="2">
             <StackPanel>
 
                 <TextBlock TextAlignment="Center" FontWeight="Bold"><Run Text="Add Lemon"/></TextBlock>
             </StackPanel>
 
         </Button>
-        <Button x:Name="uxSweet" IsEnabled="False" Grid.Column="2" Grid.Row="1" Margin="1.4,0.2,0.4,50.6">
+        <Button Click="OnSelectSweet" x:Name="uxSweet" IsEnabled="False" Grid.Column="2" Grid.Row="1" Margin="1.4,0.2,0.4,50.6">
             <StackPanel>
 
                 <TextBlock TextAlignment="Center" FontWeight="Bold"><Run Text="Sweet"/></TextBlock>

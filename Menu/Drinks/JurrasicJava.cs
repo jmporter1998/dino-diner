@@ -21,7 +21,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Shows if the jurrasicJava is decaf
         /// </summary>
-        public bool Decaf { get; set; } = false;
+        public bool Decaf { get { return this.Decaf; } set { NotifyOfPropertyChanged("Special"); } }
 
         /// <summary>
         /// Changes the size and coresponding values
@@ -59,6 +59,7 @@ namespace DinoDiner.Menu
         {
             Ice = false;
             Size = Size.Small;
+            Decaf = false;
             Ingredients.Add("Water");
             Ingredients.Add("Coffee");
         }

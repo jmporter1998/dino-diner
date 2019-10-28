@@ -21,7 +21,7 @@
         </Grid.ColumnDefinitions>
 
 
-        <Button>
+        <Button Click="OnSelectCherry">
 
             <StackPanel>
                 <TextBlock TextAlignment="Center" FontWeight="Bold" FontSize="20">Cherry</TextBlock>
@@ -29,7 +29,7 @@
 
         </Button>
         
-        <Button  Grid.Column="1">
+        <Button Click="OnSelectChocolate"  Grid.Column="1">
 
             <StackPanel>
                 <TextBlock TextAlignment="Center" FontWeight="Bold" FontSize="20">Chocolate</TextBlock>
@@ -37,14 +37,14 @@
 
         </Button>
 
-        <Button Grid.Column="2" Margin="0.4,0,0,150" Grid.RowSpan="2" >
+        <Button Click="OnSelectCola" Grid.Column="2" Margin="0.4,0,0,150" Grid.RowSpan="2" >
             <StackPanel>
                 <TextBlock TextAlignment="Center" FontWeight="Bold" FontSize="20">Cola</TextBlock>
             </StackPanel>
 
         </Button>
 
-        <Button Grid.Row="1">
+        <Button Click="OnSelectLime" Grid.Row="1">
 
             <StackPanel>
                 <TextBlock TextAlignment="Center" FontWeight="Bold" FontSize="20">Lime</TextBlock>
@@ -52,7 +52,7 @@
 
         </Button>
         
-        <Button Grid.Row="1" Grid.Column="1">
+        <Button Click="OnSelectOrange" Grid.Row="1" Grid.Column="1">
 
             <StackPanel>
                 <TextBlock TextAlignment="Center" FontWeight="Bold" FontSize="20">Orange</TextBlock>
@@ -60,14 +60,14 @@
 
         </Button>
 
-        <Button Grid.Row="1" Grid.Column="2" Margin="0.4,0,0,150" Grid.RowSpan="2" >
+        <Button Click="OnSelectRootBeer" Grid.Row="1" Grid.Column="2" Margin="0.4,0.4,0,0" >
             <StackPanel>
                 <TextBlock TextAlignment="Center" FontWeight="Bold" FontSize="20">Root Beer</TextBlock>
             </StackPanel>
 
         </Button>
 
-        <Button Grid.Row="2" Grid.Column="1">
+        <Button Click="OnSelectVanilla" Grid.Row="2" Grid.Column="1">
 
             <StackPanel>
                 <TextBlock TextAlignment="Center" FontWeight="Bold" FontSize="20">Vanilla</TextBlock>

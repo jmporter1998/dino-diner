@@ -109,9 +109,76 @@ namespace PointOfSale
             }
         }
 
-        private void OnSelectDone(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// THe click event for the done button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        private void OnSelectDone(object sender, RoutedEventArgs args)
         {
+            NavigationService.Navigate(new MenuCategorySelection());
+        }
 
+        /// <summary>
+        /// The click event for the flavor button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        public void OnSelectFlavor(object sender, RoutedEventArgs args)
+        {
+            NavigationService.Navigate(new FlavorSelection());
+        }
+
+        /// <summary>
+        /// The click event for the add lemon
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        public void OnSelectAddLemon(object sender, RoutedEventArgs args)
+        {
+           if (drink is Water water)
+            {
+                water.AddLemon();
+            }
+            if (drink is Tyrannotea tyrannotea)
+            {
+                tyrannotea.AddLemon();
+            }
+        }
+
+
+        /// <summary>
+        /// The click event for the sweet button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        public void OnSelectSweet(object sender, RoutedEventArgs args)
+        {
+            if (drink is Tyrannotea tyrannotea)
+            {
+                tyrannotea.Sweet = true;
+            }
+        }
+
+        /// <summary>
+        /// The click event for decaf button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        public void OnSelectDecaf(object sender, RoutedEventArgs args)
+        {
+            if (drink is JurrasicJava jurrasicJava)
+            {
+                jurrasicJava.Decaf = true;
+            }
+        }
+
+
+
+        public DrinkSelection(Drink drink)
+        {
+            InitializeComponent();
+            this.drink = drink;
         }
     }
 }
