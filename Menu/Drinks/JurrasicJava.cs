@@ -18,10 +18,23 @@ namespace DinoDiner.Menu
         /// </summary>
         public bool RoomForCream { get; set; } = false;
 
+        private bool decaf = false;
+
         /// <summary>
         /// Shows if the jurrasicJava is decaf
         /// </summary>
-        public bool Decaf { get { return this.Decaf; } set { NotifyOfPropertyChanged("Special"); } }
+        public bool Decaf
+        {
+            get
+            {
+                return decaf;
+            }
+            set
+            {
+                decaf = value;
+                NotifyOfPropertyChanged("Description");
+            }
+        }
 
         /// <summary>
         /// Changes the size and coresponding values
