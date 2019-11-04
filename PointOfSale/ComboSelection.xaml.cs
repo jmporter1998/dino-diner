@@ -21,7 +21,9 @@ namespace PointOfSale
     /// </summary>
     public partial class ComboSelection : Page
     {
-        Entree entree;
+        CretaceousCombo combo;
+
+
 
 
         public ComboSelection()
@@ -43,9 +45,10 @@ namespace PointOfSale
         {
             if (DataContext is Order order)
             {
-                entree = new Brontowurst();
-                order.Add(entree);
-                NavigationService.Navigate(new CustomizeCombo());
+
+                combo = new CretaceousCombo(new Brontowurst());
+                order.Add(combo);
+                NavigationService.Navigate(new CustomizeBrontowurst(new Brontowurst()));
             }
         }
 
@@ -58,9 +61,9 @@ namespace PointOfSale
         {
             if (DataContext is Order order)
             {
-                entree = new DinoNuggets();
-                order.Add(entree);
-                NavigationService.Navigate(new CustomizeCombo());
+                combo = new CretaceousCombo(new DinoNuggets());
+                order.Add(combo);
+                //NavigationService.Navigate(new CustomizeDinoNuggets(combo));
             }
         }
 
@@ -73,9 +76,9 @@ namespace PointOfSale
         {
             if (DataContext is Order order)
             {
-                entree = new PrehistoricPBJ();
-                order.Add(entree);
-                NavigationService.Navigate(new CustomizeCombo());
+                combo = new CretaceousCombo(new PrehistoricPBJ());
+                order.Add(combo);
+                //NavigationService.Navigate(new CustomizePrehistoricPBJ(combo));
             }
         }
 
@@ -88,8 +91,8 @@ namespace PointOfSale
         {
             if (DataContext is Order order)
             {
-                entree = new PterodactylWings();
-                order.Add(entree);
+                combo = new CretaceousCombo(new PterodactylWings());
+                order.Add(combo);
                 NavigationService.Navigate(new CustomizeCombo());
             }
         }
@@ -103,9 +106,9 @@ namespace PointOfSale
         {
             if (DataContext is Order order)
             {
-                entree = new SteakosaurusBurger();
-                order.Add(entree);
-                NavigationService.Navigate(new CustomizeCombo());
+                combo = new CretaceousCombo(new SteakosaurusBurger());
+                order.Add(combo);
+                //NavigationService.Navigate(new CustomizeSteakosaurusBurger(combo));
             }
         }
 
@@ -118,9 +121,9 @@ namespace PointOfSale
         {
             if (DataContext is Order order)
             {
-                entree = new TRexKingBurger();
-                order.Add(entree);
-                NavigationService.Navigate(new CustomizeCombo());
+                combo = new CretaceousCombo(new TRexKingBurger());
+                order.Add(combo);
+                //Navigate(new CustomizeTRexKingBurger(combo));
             }
         }
 
@@ -133,9 +136,9 @@ namespace PointOfSale
         {
             if (DataContext is Order order)
             {
-                entree = new VelociWrap();
-                order.Add(entree);
-                NavigationService.Navigate(new CustomizeCombo());
+                combo = new CretaceousCombo(new VelociWrap());
+                order.Add(combo);
+                //NavigationService.Navigate(new CustomizeVelociWrap(combo));
             }
         }
     }

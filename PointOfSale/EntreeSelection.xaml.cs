@@ -30,6 +30,7 @@ namespace PointOfSale
 
         void SelectEntree(object sender, RoutedEventArgs args)
         {
+
         }
 
         /// <summary>
@@ -43,7 +44,10 @@ namespace PointOfSale
             {
                 entree = new Brontowurst();
                 order.Add(entree);
-                NavigationService.Navigate(new MenuCategorySelection());
+                if (entree is Brontowurst brontowurst)
+                {
+                    NavigationService.Navigate(new CustomizeBrontowurst(new Brontowurst()));
+                }
             }
         }
 
@@ -58,7 +62,10 @@ namespace PointOfSale
             {
                 entree = new DinoNuggets();
                 order.Add(entree);
-                NavigationService.Navigate(new MenuCategorySelection());
+                if (entree is DinoNuggets nuggets)
+                {
+                    NavigationService.Navigate(new CustomizeDinoNuggets(nuggets));
+                }
             }
         }
 
@@ -73,7 +80,10 @@ namespace PointOfSale
             {
                 entree = new PrehistoricPBJ();
                 order.Add(entree);
-                NavigationService.Navigate(new MenuCategorySelection());
+                if (entree is PrehistoricPBJ pbj)
+                {
+                    NavigationService.Navigate(new CustomizePrehistoricPBJ(pbj));
+                }
             }
         }
 
@@ -103,7 +113,10 @@ namespace PointOfSale
             {
                 entree = new SteakosaurusBurger();
                 order.Add(entree);
-                NavigationService.Navigate(new MenuCategorySelection());
+                if (entree is SteakosaurusBurger burger)
+                {
+                    NavigationService.Navigate(new CustomizeSteakosaurusBurger(burger));
+                }
             }
         }
 
@@ -118,7 +131,10 @@ namespace PointOfSale
             {
                 entree = new TRexKingBurger();
                 order.Add(entree);
-                NavigationService.Navigate(new MenuCategorySelection());
+                if (entree is TRexKingBurger burger)
+                {
+                    NavigationService.Navigate(new CustomizeTRexKingBurger(burger));
+                }
             }
         }
 
@@ -133,7 +149,10 @@ namespace PointOfSale
             {
                 entree = new VelociWrap();
                 order.Add(entree);
-                NavigationService.Navigate(new MenuCategorySelection());
+                if (entree is VelociWrap wrap)
+                {
+                    NavigationService.Navigate(new CustomizeVelociWrap(wrap));
+                }
             }
         }
     }

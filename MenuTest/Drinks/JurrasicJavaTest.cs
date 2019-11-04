@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using DinoDiner.Menu.Drinks;
 using Xunit;
 using DinoDiner.Menu;
 
@@ -53,6 +52,7 @@ namespace MenuTest.Drinks
         /// <summary>
         /// Checks that the default is no room for cream 
         /// </summary>
+        [Fact]
         public void ShouldHaveDefaultNoRoomForCream()
         {
             JurrasicJava java = new JurrasicJava();

@@ -3,9 +3,6 @@ using System.Collections.Generic;
 using System.Text;
 using Xunit;
 using DinoDiner.Menu;
-using DinoDiner.Menu.Drinks;
-using DinoDiner.Menu.Sides;
-using DinoDiner.Menu;
 
 namespace MenuTest
 {

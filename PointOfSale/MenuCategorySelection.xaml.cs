@@ -27,7 +27,7 @@ namespace PointOfSale
 
         void SelectCombo(object sender, RoutedEventArgs args)
         {
-            NavigationService.Navigate(new ComboSelection());
+            NavigationService.Navigate(new CustomizeCombo());
         }
 
         void SelectDrink(object sender, RoutedEventArgs args)
