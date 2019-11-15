@@ -53,6 +53,7 @@
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="CustomizeBrontowurst.xaml.cs">
       <DependentUpon>CustomizeBrontowurst.xaml</DependentUpon>
@@ -183,6 +184,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Milestones\1-create-order-pages.workbook" />
+    <None Include="Milestones\2-user-interaction-part-I.workbook" />
+    <None Include="Milestones\3-user-interaction-part-II.workbook" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -197,6 +201,7 @@
       <Name>Menu</Name>
     </ProjectReference>
   </ItemGroup>
+<<<<<<< HEAD
   <ItemGroup>
     <Resource Include="Assests\DinoDiner-01.png" />
     <Resource Include="Assests\DinoDiner-02.png" />
@@ -214,5 +219,7 @@
     <Resource Include="Assests\DinoDiner-14.png" />
     <Resource Include="Assests\DinoDiner-15.png" />
   </ItemGroup>
+=======
+>>>>>>> 021bea81f5e782012eb540f2073fc2441281a2d8
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
