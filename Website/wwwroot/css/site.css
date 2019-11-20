@@ -12,3 +12,19 @@ body {
     padding-right: 15px;
 }
 
+.banner {
+    padding-top 5px;
+    height: 200px;
+    width: 400px;
+}
+
+img {
+    width: 200%;
+    max-height: 100%;
+    display: block;
+}
+
+.item-type {
+    background: LightGray;
+    border: double 2px black;
+}
