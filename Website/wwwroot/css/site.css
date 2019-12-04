@@ -25,6 +25,27 @@ img {
 }
 
 .item-type {
-    background: LightGray;
-    border: double 2px black;
+    border: double 1px black;
+}
+
+form {
+    width: 300px;
+    background-color: lightgrey;
+    flex-grow: 0;
+    padding: 50px:
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+}
+
+.menu {
+    padding = 50px;
+}
+
+.checkbox-list {
+    display: flex;
+    flex-direction: column;
 }
