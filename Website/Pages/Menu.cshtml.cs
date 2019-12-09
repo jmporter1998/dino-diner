@@ -35,6 +35,22 @@ namespace Website.Pages
         [BindProperty]
         public List<string> possibleIngredients { get; set; } = new List<string>();
 
+        /// <summary>
+        /// The list of the possible sizes
+        /// </summary>
+        [BindProperty]
+        public List<Size> possibleSizes
+        {
+            get
+            {
+                List<Size> result = new List<Size>();
+                result.Add(Size.Small);
+                result.Add(Size.Medium);
+                result.Add(Size.Large);
+                return result;
+            }
+        }
+
 
         //Private backing variable
         private Menu menu = new Menu();
@@ -55,13 +71,13 @@ namespace Website.Pages
             
         }
 
-        private List<IMenuItem> combos = new List<IMenuItem>();
+        private IEnumerable<IMenuItem> combos = new List<IMenuItem>();
 
         /// <summary>
         /// The lsit of the combos
         /// </summary>
         [BindProperty]
-        public List<IMenuItem> Combos
+        public IEnumerable<IMenuItem> Combos
         {
             get
             {
@@ -73,13 +89,13 @@ namespace Website.Pages
             }
         }
 
-        private List<IMenuItem> drinks = new List<IMenuItem>();
+        private IEnumerable<IMenuItem> drinks = new List<IMenuItem>();
 
         /// <summary>
         /// The list of the drinks
         /// </summary>
         [BindProperty]
-        public List<IMenuItem> Drinks
+        public IEnumerable<IMenuItem> Drinks
         {
             get
             {
@@ -91,13 +107,13 @@ namespace Website.Pages
             }
         }
 
-        private List<IMenuItem> entrees = new List<IMenuItem>();
+        private IEnumerable<IMenuItem> entrees = new List<IMenuItem>();
 
         /// <summary>
         /// The lsit of the entrees
         /// </summary>
         [BindProperty]
-        public List<IMenuItem> Entrees
+        public IEnumerable<IMenuItem> Entrees
         {
             get
             {
@@ -110,13 +126,13 @@ namespace Website.Pages
         }
 
 
-        private List<IMenuItem> sides = new List<IMenuItem>();
+        private IEnumerable<IMenuItem> sides = new List<IMenuItem>();
 
         /// <summary>
         /// The list of the sides
         /// </summary>
         [BindProperty]
-        public List<IMenuItem> Sides
+        public IEnumerable<IMenuItem> Sides
         {
             get
             {
@@ -160,118 +176,44 @@ namespace Website.Pages
 
             if (search != null)
             {
-                Combos = Search(Combos);
-                Drinks = Search(Drinks);
-                Entrees = Search(Entrees);
-                Sides = Search(Sides);
+                Combos = Combos.Where(item => item.ToString().Contains(search, StringComparison.OrdinalIgnoreCase));
+                Drinks = Drinks.Where(item => item.ToString().Contains(search, StringComparison.OrdinalIgnoreCase));
+                Entrees = Entrees.Where(item => item.ToString().Contains(search, StringComparison.OrdinalIgnoreCase));
+                Sides = Sides.Where(item => item.ToString().Contains(search, StringComparison.OrdinalIgnoreCase));
             }
 
             if (minimumPrice != null)
             {
-                Combos = FilterByMinPrice(Combos);
-                Drinks = FilterByMinPrice(Drinks);
-                Entrees = FilterByMinPrice(Entrees);
-                Sides = FilterByMinPrice(Sides);
+                Combos = Combos.Where(item => item.Price >= minimumPrice);
+                Drinks = Drinks.Where(item => item.Price >= minimumPrice);
+                Entrees = Entrees.Where(item => item.Price >= minimumPrice);
+                Sides = Sides.Where(item => item.Price >= minimumPrice);
             }
 
             if (maximumPrice != null)
             {
-                Combos = FilterByMaxPrice(Combos);
-                Drinks = FilterByMaxPrice(Drinks);
-                Entrees = FilterByMaxPrice(Entrees);
-                Sides = FilterByMaxPrice(Sides);
+                Combos = Combos.Where(item => item.Price <= maximumPrice);
+                Drinks = Drinks.Where(item => item.Price <= maximumPrice);
+                Entrees = Entrees.Where(item => item.Price <= maximumPrice);
+                Sides = Sides.Where(item => item.Price <= maximumPrice);
             }
 
-            if (possibleIngredients.Count > 0)
-            {
-                Combos = FilterByIngredients(Combos);
-                Drinks = FilterByIngredients(Drinks);
-                Entrees = FilterByIngredients(Entrees);
-                Sides = FilterByIngredients(Sides);
-            }
-            
-            
-        }
-
-        /// <summary>
-        /// Filters the menu by the word in the search bar
-        /// </summary>
-        /// <param name="list"></param>
-        /// <returns></returns>
-        public List<IMenuItem> Search(List<IMenuItem> list)
-        {
-            List<IMenuItem> result = new List<IMenuItem>();
-
-            foreach (IMenuItem item in list)
-            {
-                if (item.ToString().Contains(search, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.Add(item);
-                }
-            }
-            return result;
-        }
-
-        /// <summary>
-        /// Filters the menu by the minimum price
-        /// </summary>
-        /// <param name="list"></param>
-        /// <returns></returns>
-        public List<IMenuItem> FilterByMinPrice(List<IMenuItem> list)
-        {
-            List<IMenuItem> result = new List<IMenuItem>();
-
-            foreach (IMenuItem item in list)
-            {
-                if (item.Price >= minimumPrice)
-                {
-                    result.Add(item);
-                }
-            }
-            return result;
-        }
-
-        /// <summary>
-        /// Filters the menu by the max price
-        /// </summary>
-        /// <param name="list"></param>
-        /// <returns></returns>
-        public List<IMenuItem> FilterByMaxPrice(List<IMenuItem> list)
-        {
-            List<IMenuItem> result = new List<IMenuItem>();
-
-            foreach (IMenuItem item in list)
-            {
-                if (item.Price <= maximumPrice)
-                {
-                    result.Add(item);
-                }
-            }
-            return result;
-        }
-
-        /// <summary>
-        /// filters the menu by ingredients
-        /// </summary>
-        /// <param name="list"></param>
-        /// <returns></returns>
-        public List<IMenuItem> FilterByIngredients(List<IMenuItem> list)
-        {
-            List<IMenuItem> result = new List<IMenuItem>();
-
-            foreach (IMenuItem item in list)
+            if(possibleIngredients.Count > 0)
             {
                 foreach (string ingredients in possibleIngredients)
                 {
-                    if (!item.Ingredients.Contains(ingredients))
-                    {
-                        result.Add(item);
-                    }
+                    Combos = Combos.Where(item => !(item.Ingredients.Contains(ingredients)));
+                    Drinks = Drinks.Where(item => !(item.Ingredients.Contains(ingredients)));
+                    Entrees = Entrees.Where(item => !(item.Ingredients.Contains(ingredients)));
+                    Sides = Sides.Where(item => !(item.Ingredients.Contains(ingredients)));
                 }
             }
-            return result;
+
+            if (menuCategory.Count > 0)
+            {
+                
+            }
+
         }
-
-
     }
 }

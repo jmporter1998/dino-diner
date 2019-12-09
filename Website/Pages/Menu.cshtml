@@ -19,6 +19,30 @@
                 {
                     <div class="menu-item">
                         <h3>@combo.Description:</h3>
+                        <table>
+                            <tr>
+                                <th>Size</th>
+                                <th>Price</th>
+                                <th>Calories</th>
+                            </tr>
+                            
+                            <tr>
+                                <th>@(combo.Size = DinoDiner.Menu.Size.Small)</th>
+                                <th>@combo.Price</th>
+                                <th>@combo.Calories</th>
+                            </tr>
+                            
+                            <tr>
+                                <th>@(combo.Size = DinoDiner.Menu.Size.Medium)</th>
+                                <th>@combo.Price</th>
+                                <th>@combo.Calories</th>
+                            </tr>
+                            <tr>
+                                <th>@(combo.Size = DinoDiner.Menu.Size.Large)</th>
+                                <th>@combo.Price</th>
+                                <th>@combo.Calories</th>
+                            </tr>
+                        </table>
                         <p>
                             Ingredients:
                             @for (int i = 0; i < combo.Ingredients.Count; i++)
@@ -32,8 +56,6 @@
                                     @(combo.Ingredients[i])
                                 }
                             }<br />
-                            Calories: @combo.Calories<br />
-                            Price: $@combo.Price<br />
                         </p>
                     </div>
 
@@ -77,25 +99,48 @@
             <div class="item-type">
                 @foreach (DinoDiner.Menu.Side side in Model.Sides)
                 {
-                    <div class="menu-item">
-                        <h3>@side.Description:</h3>
-                        <p>
-                            Ingredients:
-                            @for (int i = 0; i < side.Ingredients.Count; i++)
+                <div class="menu-item">
+                    <h3>@side.Description:</h3>
+                    <table>
+                        <tr>
+                            <th>Size</th>
+                            <th>Price</th>
+                            <th>Calories</th>
+                        </tr>
+                        <tr>
+                            <th>@(side.Size = DinoDiner.Menu.Size.Small)</th>
+                            <th>@side.Price</th>
+                            <th>@side.Calories</th>
+                        </tr>
+                        @side.Size = Size.Medium
+                        <tr>
+                            <th>@(side.Size = DinoDiner.Menu.Size.Medium)</th>
+                            <th>@side.Price</th>
+                            <th>@side.Calories</th>
+                        </tr>
+                        @side.Size = Size.Large
+                        <tr>
+                            <th>@(side.Size = DinoDiner.Menu.Size.Large)</th>
+                            <th>@side.Price</th>
+                            <th>@side.Calories</th>
+                        </tr>
+                    </table>
+                    <p>
+                        Ingredients:
+                        @for (int i = 0; i < side.Ingredients.Count; i++)
+                        {
+                            if (i != side.Ingredients.Count - 1)
                             {
-                                if (i != side.Ingredients.Count - 1)
-                                {
-                                    @(side.Ingredients[i] + ", ")
-                                }
-                                else
-                                {
-                                    @(side.Ingredients[i])
-                                }
-                            }<br />
-                            Calories: @side.Calories<br />
-                            Price: $@side.Price<br />
-                        </p>
-                    </div>
+                                @(side.Ingredients[i] + ", ")
+                            }
+                            else
+                            {
+                                @(side.Ingredients[i])
+                            }
+                        }<br />
+                        
+                    </p>
+                </div>
 
                 }
             </div>
@@ -109,6 +154,29 @@
                 {
                     <div class="menu-item">
                         <h3>@drink.Description:</h3>
+                        <table>
+                            <tr>
+                                <th>Size</th>
+                                <th>Price</th>
+                                <th>Calories</th>
+                            </tr>
+                            <tr>
+                                <th>@(@drink.Size = DinoDiner.Menu.Size.Small)</th>
+                                <th>@drink.Price</th>
+                                <th>@drink.Calories</th>
+                            </tr>
+                            <tr>
+                                <th>@(@drink.Size = DinoDiner.Menu.Size.Medium)</th>
+                                <th>@drink.Price</th>
+                                <th>@drink.Calories</th>
+                            </tr>
+                            
+                            <tr>
+                                <th>@(@drink.Size = DinoDiner.Menu.Size.Large)</th>
+                                <th>@drink.Price</th>
+                                <th>@drink.Calories</th>
+                            </tr>
+                        </table>
                         <p>
                             Ingredients:
                             @for (int i = 0; i < drink.Ingredients.Count; i++)
@@ -122,8 +190,7 @@
                                     @(drink.Ingredients[i])
                                 }
                             }<br />
-                            Calories: @drink.Calories<br />
-                            Price: $@drink.Price<br />
+                            
                         </p>
                     </div>
 
